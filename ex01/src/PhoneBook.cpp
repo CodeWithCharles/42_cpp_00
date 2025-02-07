@@ -6,7 +6,7 @@
 /*   By: cpoulain <cpoulain@student.42lehavre.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 03:52:55 by cpoulain          #+#    #+#             */
-/*   Updated: 2025/02/06 04:47:58 by cpoulain         ###   ########.fr       */
+/*   Updated: 2025/02/07 10:54:40 by cpoulain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	PhoneBook::set_information(void)
 			std::cout << SIGQUIT_MESSAGE;
 			std::exit(0);
 		}
-		else if (input.compare("1") == 0)
+		else if (input.compare("y") == 0 || input.compare("Y") == 0)
 		{
 			for (int i = 1; i < 8; i++)
 				this->_contacts[i - 1] = this->_contacts[i];
@@ -70,7 +70,7 @@ void	PhoneBook::get_information() const
 	}
 
 	std::cout << SEARCH_HEADER;
-	for (int i = 0; i < this->_index; i++)
+	for (int i = 0; i <= this->_index; i++)
 		this->_contacts[i].get_contact_header(i + 1);
 	std::cout << SEARCH_FOOTER;
 	std::cout << "\n" << PROMPT_SEARCH_MESSAGE;
